@@ -35,8 +35,6 @@
 			this.colSoDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.btnAdd = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
 			this.txtBoxDiaChi = new System.Windows.Forms.TextBox();
 			this.txtboxSoDT = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -45,10 +43,16 @@
 			this.txtBoxMaKH = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.rbAdd = new System.Windows.Forms.RadioButton();
+			this.rbUpdate = new System.Windows.Forms.RadioButton();
+			this.rbDelete = new System.Windows.Forms.RadioButton();
+			this.btn = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.panel2.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -101,9 +105,8 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.button1);
-			this.panel2.Controls.Add(this.btnAdd);
-			this.panel2.Controls.Add(this.button3);
+			this.panel2.Controls.Add(this.btn);
+			this.panel2.Controls.Add(this.groupBox1);
 			this.panel2.Controls.Add(this.txtBoxDiaChi);
 			this.panel2.Controls.Add(this.txtboxSoDT);
 			this.panel2.Controls.Add(this.label4);
@@ -118,28 +121,11 @@
 			this.panel2.Size = new System.Drawing.Size(354, 450);
 			this.panel2.TabIndex = 0;
 			// 
-			// btnAdd
-			// 
-			this.btnAdd.Location = new System.Drawing.Point(36, 318);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(75, 23);
-			this.btnAdd.TabIndex = 2;
-			this.btnAdd.Text = "Thêm";
-			this.btnAdd.UseVisualStyleBackColor = true;
-			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(267, 318);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 2;
-			this.button3.Text = "Xóa";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
 			// txtBoxDiaChi
 			// 
+			this.txtBoxDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtBoxDiaChi.Location = new System.Drawing.Point(142, 221);
 			this.txtBoxDiaChi.Name = "txtBoxDiaChi";
 			this.txtBoxDiaChi.Size = new System.Drawing.Size(173, 20);
@@ -147,6 +133,9 @@
 			// 
 			// txtboxSoDT
 			// 
+			this.txtboxSoDT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtboxSoDT.Location = new System.Drawing.Point(142, 174);
 			this.txtboxSoDT.Name = "txtboxSoDT";
 			this.txtboxSoDT.Size = new System.Drawing.Size(173, 20);
@@ -154,6 +143,9 @@
 			// 
 			// label4
 			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.AutoSize = true;
 			this.label4.Location = new System.Drawing.Point(46, 224);
 			this.label4.Name = "label4";
@@ -163,6 +155,9 @@
 			// 
 			// txtBoxTenKH
 			// 
+			this.txtBoxTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtBoxTenKH.Location = new System.Drawing.Point(142, 132);
 			this.txtBoxTenKH.Name = "txtBoxTenKH";
 			this.txtBoxTenKH.Size = new System.Drawing.Size(173, 20);
@@ -170,6 +165,9 @@
 			// 
 			// label3
 			// 
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(33, 181);
 			this.label3.Name = "label3";
@@ -179,13 +177,20 @@
 			// 
 			// txtBoxMaKH
 			// 
+			this.txtBoxMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtBoxMaKH.Location = new System.Drawing.Point(142, 84);
 			this.txtBoxMaKH.Name = "txtBoxMaKH";
+			this.txtBoxMaKH.ReadOnly = true;
 			this.txtBoxMaKH.Size = new System.Drawing.Size(173, 20);
 			this.txtBoxMaKH.TabIndex = 1;
 			// 
 			// label2
 			// 
+			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(29, 135);
 			this.label2.Name = "label2";
@@ -195,6 +200,9 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(29, 87);
 			this.label1.Name = "label1";
@@ -202,15 +210,65 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Mã khách hàng";
 			// 
-			// button1
+			// groupBox1
 			// 
-			this.button1.Location = new System.Drawing.Point(155, 318);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 3;
-			this.button1.Text = "Cập nhật";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.rbDelete);
+			this.groupBox1.Controls.Add(this.rbUpdate);
+			this.groupBox1.Controls.Add(this.rbAdd);
+			this.groupBox1.Location = new System.Drawing.Point(32, 285);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(310, 153);
+			this.groupBox1.TabIndex = 2;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Lựa chọn chức năng";
+			// 
+			// rbAdd
+			// 
+			this.rbAdd.AutoSize = true;
+			this.rbAdd.Location = new System.Drawing.Point(7, 29);
+			this.rbAdd.Name = "rbAdd";
+			this.rbAdd.Size = new System.Drawing.Size(52, 17);
+			this.rbAdd.TabIndex = 0;
+			this.rbAdd.Text = "Thêm";
+			this.rbAdd.UseVisualStyleBackColor = true;
+			this.rbAdd.CheckedChanged += new System.EventHandler(this.rbAdd_CheckedChanged);
+			// 
+			// rbUpdate
+			// 
+			this.rbUpdate.AutoSize = true;
+			this.rbUpdate.Checked = true;
+			this.rbUpdate.Location = new System.Drawing.Point(6, 69);
+			this.rbUpdate.Name = "rbUpdate";
+			this.rbUpdate.Size = new System.Drawing.Size(68, 17);
+			this.rbUpdate.TabIndex = 0;
+			this.rbUpdate.TabStop = true;
+			this.rbUpdate.Text = "Cập nhật";
+			this.rbUpdate.UseVisualStyleBackColor = true;
+			this.rbUpdate.CheckedChanged += new System.EventHandler(this.rbUpdate_CheckedChanged);
+			// 
+			// rbDelete
+			// 
+			this.rbDelete.AutoSize = true;
+			this.rbDelete.Location = new System.Drawing.Point(6, 113);
+			this.rbDelete.Name = "rbDelete";
+			this.rbDelete.Size = new System.Drawing.Size(44, 17);
+			this.rbDelete.TabIndex = 0;
+			this.rbDelete.Text = "Xóa";
+			this.rbDelete.UseVisualStyleBackColor = true;
+			this.rbDelete.CheckedChanged += new System.EventHandler(this.rbDelete_CheckedChanged);
+			// 
+			// btn
+			// 
+			this.btn.Location = new System.Drawing.Point(190, 256);
+			this.btn.Name = "btn";
+			this.btn.Size = new System.Drawing.Size(79, 23);
+			this.btn.TabIndex = 3;
+			this.btn.Text = "Cập nhật";
+			this.btn.UseVisualStyleBackColor = true;
+			this.btn.Click += new System.EventHandler(this.btn_Click);
 			// 
 			// FormKhachHang
 			// 
@@ -226,6 +284,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -247,8 +307,11 @@
 		private System.Windows.Forms.TextBox txtBoxMaKH;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button btnAdd;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.RadioButton rbDelete;
+		private System.Windows.Forms.RadioButton rbUpdate;
+		private System.Windows.Forms.RadioButton rbAdd;
+		private System.ComponentModel.BackgroundWorker backgroundWorker1;
+		private System.Windows.Forms.Button btn;
 	}
 }

@@ -93,5 +93,45 @@ namespace DesignPatternDB
 		{
 			presenter.Update();
 		}
+		private void btn_Click(object sender, EventArgs e)
+		{
+			if (rbAdd.Checked == true)
+				presenter.AddNew();
+			else if (rbUpdate.Checked == true)
+				presenter.Update();
+			else if (rbDelete.Checked == true)
+				presenter.Delete();
+		}
+		private void rbAdd_CheckedChanged(object sender, EventArgs e)
+		{
+			if(rbAdd.Checked == true)
+			{
+				txtBoxMaKH.ReadOnly = false;
+				btn.Text = "Thêm";
+			}
+
+		}
+
+		private void rbUpdate_CheckedChanged(object sender, EventArgs e)
+		{
+			if(rbUpdate.Checked)
+			{
+				txtBoxMaKH.ReadOnly = false;
+				btn.Text = "Cập nhật";
+			}
+		}
+
+		private void rbDelete_CheckedChanged(object sender, EventArgs e)
+		{
+			if (rbDelete.Checked)
+			{
+				txtBoxMaKH.ReadOnly = false;
+				btn.Text = "Xóa";
+			}
+		}
+
+	}
+
+
 	}
 }
