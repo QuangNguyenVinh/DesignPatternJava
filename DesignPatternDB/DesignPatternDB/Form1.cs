@@ -25,5 +25,16 @@ namespace DesignPatternDB
 			formKhachHang.MdiParent = this;
 			this.Cursor = Cursors.Default;
 		}
+
+		private void mặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.Cursor = Cursors.WaitCursor;
+			FormMatHang formMatHang = new FormMatHang();
+			formMatHang.Show();
+			formMatHang.MdiParent = this;
+			this.Cursor = Cursors.Default;
+
+
+		}
 	}
 }

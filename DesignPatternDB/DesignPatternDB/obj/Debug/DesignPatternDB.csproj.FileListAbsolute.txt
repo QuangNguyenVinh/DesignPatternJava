@@ -14,3 +14,4 @@ D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatter
 D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.csproj.CopyComplete
 D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.exe
 D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.pdb
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.FormMatHang.resources

@@ -57,15 +57,16 @@
 			// kháchHàngToolStripMenuItem
 			// 
 			this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-			this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
 			this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
 			this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
 			// 
 			// mặtHàngToolStripMenuItem
 			// 
 			this.mặtHàngToolStripMenuItem.Name = "mặtHàngToolStripMenuItem";
-			this.mặtHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.mặtHàngToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
 			this.mặtHàngToolStripMenuItem.Text = "Mặt hàng";
+			this.mặtHàngToolStripMenuItem.Click += new System.EventHandler(this.mặtHàngToolStripMenuItem_Click);
 			// 
 			// Form1
 			// 

@@ -67,6 +67,12 @@
     <Compile Include="FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMatHang.Designer.cs">
+      <DependentUpon>FormMatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\CTHD.cs">
       <DependentUpon>QLBHModel.tt</DependentUpon>
     </Compile>
@@ -97,6 +103,7 @@
     <Compile Include="Presenters\EntityPresenter.cs" />
     <Compile Include="Presenters\KhachHangPresenter.cs" />
     <Compile Include="Presenters\ListEntityPresenter.cs" />
+    <Compile Include="Presenters\MatHangPresenter.cs" />
     <Compile Include="Presenters\Presenter.cs" />
     <Compile Include="Presenters\PresenterKhachHang_.cs" />
     <Compile Include="Program.cs" />
@@ -109,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMatHang.resx">
+      <DependentUpon>FormMatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
