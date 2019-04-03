@@ -46,10 +46,6 @@ namespace DesignPatternDB
 			presenter.ViewEntityAt(index);
 		}
 
-		private void btnAdd_Click(object sender, EventArgs e)
-		{
-			presenter.AddNew();
-		}
 
 		KHACHHANG IViewEntity<KHACHHANG>.AddNew()
 		{
@@ -84,15 +80,7 @@ namespace DesignPatternDB
 			dataGridView1.DataSource = bindingSource;
 		}
 
-		private void button3_Click(object sender, EventArgs e)
-		{
-			presenter.Delete();
-		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			presenter.Update();
-		}
 		private void btn_Click(object sender, EventArgs e)
 		{
 			if (rbAdd.Checked == true)
@@ -116,7 +104,7 @@ namespace DesignPatternDB
 		{
 			if(rbUpdate.Checked)
 			{
-				txtBoxMaKH.ReadOnly = false;
+				txtBoxMaKH.ReadOnly = true;
 				btn.Text = "Cập nhật";
 			}
 		}
@@ -125,7 +113,7 @@ namespace DesignPatternDB
 		{
 			if (rbDelete.Checked)
 			{
-				txtBoxMaKH.ReadOnly = false;
+				txtBoxMaKH.ReadOnly = true;
 				btn.Text = "Xóa";
 			}
 		}
