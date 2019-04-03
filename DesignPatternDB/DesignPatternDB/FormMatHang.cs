@@ -40,7 +40,12 @@ namespace DesignPatternDB
 
 			return mh;
 		}
-		private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+		//private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+		//{
+		//	int index = e.RowIndex;
+		//	presenter.ViewEntityAt(index);
+		//}
+		private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
 		{
 			int index = e.RowIndex;
 			presenter.ViewEntityAt(index);
@@ -120,6 +125,7 @@ namespace DesignPatternDB
 			}
 
 		}
+
 
 	}
 }
