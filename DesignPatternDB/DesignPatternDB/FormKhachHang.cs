@@ -132,6 +132,4 @@ namespace DesignPatternDB
 
 	}
 
-
-	}
 }
