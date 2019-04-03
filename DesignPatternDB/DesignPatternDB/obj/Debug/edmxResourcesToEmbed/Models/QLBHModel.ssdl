@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DesignPatternDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CTHD">
+    <Key>
+      <PropertyRef Name="STT" />
+      <PropertyRef Name="HoaDonID" />
+    </Key>
+    <Property Name="STT" Type="int" Nullable="false" />
+    <Property Name="HoaDonID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaMH" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="DonGia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="HoaDonID" />
+    </Key>
+    <Property Name="HoaDonID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NgayBan" Type="date" Nullable="false" />
+    <Property Name="KhachHangID" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="KhachHangID" />
+    </Key>
+    <Property Name="KhachHangID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoDT" Type="nvarchar" MaxLength="12" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MATHANG">
+    <Key>
+      <PropertyRef Name="MaMH" />
+    </Key>
+    <Property Name="MaMH" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenMH" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gia" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__CTHD__HoaDonID__2C3393D0">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="HoaDonID" />
+      </Principal>
+      <Dependent Role="CTHD">
+        <PropertyRef Name="HoaDonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHD__MaMH__2D27B809">
+    <End Role="MATHANG" Type="Self.MATHANG" Multiplicity="1" />
+    <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MATHANG">
+        <PropertyRef Name="MaMH" />
+      </Principal>
+      <Dependent Role="CTHD">
+        <PropertyRef Name="MaMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOADON__KhachHan__29572725">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="KhachHangID" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="KhachHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DesignPatternDBModelStoreContainer">
+    <EntitySet Name="CTHD" EntityType="Self.CTHD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MATHANG" EntityType="Self.MATHANG" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CTHD__HoaDonID__2C3393D0" Association="Self.FK__CTHD__HoaDonID__2C3393D0">
+      <End Role="HOADON" EntitySet="HOADON" />
+      <End Role="CTHD" EntitySet="CTHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTHD__MaMH__2D27B809" Association="Self.FK__CTHD__MaMH__2D27B809">
+      <End Role="MATHANG" EntitySet="MATHANG" />
+      <End Role="CTHD" EntitySet="CTHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOADON__KhachHan__29572725" Association="Self.FK__HOADON__KhachHan__29572725">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="HOADON" EntitySet="HOADON" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

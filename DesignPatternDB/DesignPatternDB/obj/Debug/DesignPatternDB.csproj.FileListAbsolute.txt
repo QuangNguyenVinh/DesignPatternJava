@@ -1,0 +1,16 @@
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\bin\Debug\DesignPatternDB.exe.config
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\bin\Debug\DesignPatternDB.exe
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\bin\Debug\DesignPatternDB.pdb
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\bin\Debug\EntityFramework.dll
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\bin\Debug\EntityFramework.SqlServer.dll
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\bin\Debug\EntityFramework.xml
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\bin\Debug\EntityFramework.SqlServer.xml
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.csprojAssemblyReference.cache
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.Form1.resources
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.FormKhachHang.resources
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.Properties.Resources.resources
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.csproj.GenerateResource.cache
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.csproj.CoreCompileInputs.cache
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.csproj.CopyComplete
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.exe
+D:\projects\desginpattern\DesignPatternDB\DesignPatternDB\obj\Debug\DesignPatternDB.pdb

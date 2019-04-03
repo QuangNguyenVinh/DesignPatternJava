@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DesignPatternDBModelStoreContainer" CdmEntityContainer="DesignPatternDBEntities">
+    <EntitySetMapping Name="CTHDs">
+      <EntityTypeMapping TypeName="DesignPatternDBModel.CTHD">
+        <MappingFragment StoreEntitySet="CTHD">
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="HoaDonID" ColumnName="HoaDonID" />
+          <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOADONs">
+      <EntityTypeMapping TypeName="DesignPatternDBModel.HOADON">
+        <MappingFragment StoreEntitySet="HOADON">
+          <ScalarProperty Name="HoaDonID" ColumnName="HoaDonID" />
+          <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
+          <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="DesignPatternDBModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MATHANGs">
+      <EntityTypeMapping TypeName="DesignPatternDBModel.MATHANG">
+        <MappingFragment StoreEntitySet="MATHANG">
+          <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+          <ScalarProperty Name="TenMH" ColumnName="TenMH" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DVT" ColumnName="DVT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

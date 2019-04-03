@@ -1,0 +1,13 @@
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ConfigForm.resources
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormObserver1.resources
+D:\projects\desginpattern\Pizza Example\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormObserver2.resources

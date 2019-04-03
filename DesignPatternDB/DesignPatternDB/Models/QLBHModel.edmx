@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DesignPatternDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CTHD">
+          <Key>
+            <PropertyRef Name="STT" />
+            <PropertyRef Name="HoaDonID" />
+          </Key>
+          <Property Name="STT" Type="int" Nullable="false" />
+          <Property Name="HoaDonID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaMH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="DonGia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="HoaDonID" />
+          </Key>
+          <Property Name="HoaDonID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NgayBan" Type="date" Nullable="false" />
+          <Property Name="KhachHangID" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="KhachHangID" />
+          </Key>
+          <Property Name="KhachHangID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoDT" Type="nvarchar" MaxLength="12" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MATHANG">
+          <Key>
+            <PropertyRef Name="MaMH" />
+          </Key>
+          <Property Name="MaMH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenMH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gia" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="DVT" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CTHD__HoaDonID__2C3393D0">
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADON">
+              <PropertyRef Name="HoaDonID" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="HoaDonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHD__MaMH__2D27B809">
+          <End Role="MATHANG" Type="Self.MATHANG" Multiplicity="1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATHANG">
+              <PropertyRef Name="MaMH" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="MaMH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__KhachHan__29572725">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="KhachHangID" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="KhachHangID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DesignPatternDBModelStoreContainer">
+          <EntitySet Name="CTHD" EntityType="Self.CTHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MATHANG" EntityType="Self.MATHANG" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CTHD__HoaDonID__2C3393D0" Association="Self.FK__CTHD__HoaDonID__2C3393D0">
+            <End Role="HOADON" EntitySet="HOADON" />
+            <End Role="CTHD" EntitySet="CTHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHD__MaMH__2D27B809" Association="Self.FK__CTHD__MaMH__2D27B809">
+            <End Role="MATHANG" EntitySet="MATHANG" />
+            <End Role="CTHD" EntitySet="CTHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__KhachHan__29572725" Association="Self.FK__HOADON__KhachHan__29572725">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="HOADON" EntitySet="HOADON" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DesignPatternDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CTHD">
+          <Key>
+            <PropertyRef Name="STT" />
+            <PropertyRef Name="HoaDonID" />
+          </Key>
+          <Property Name="STT" Type="Int32" Nullable="false" />
+          <Property Name="HoaDonID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="DonGia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HOADON" Relationship="Self.FK__CTHD__HoaDonID__2C3393D0" FromRole="CTHD" ToRole="HOADON" />
+          <NavigationProperty Name="MATHANG" Relationship="Self.FK__CTHD__MaMH__2D27B809" FromRole="CTHD" ToRole="MATHANG" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="HoaDonID" />
+          </Key>
+          <Property Name="HoaDonID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgayBan" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="KhachHangID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CTHDs" Relationship="Self.FK__CTHD__HoaDonID__2C3393D0" FromRole="HOADON" ToRole="CTHD" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__HOADON__KhachHan__29572725" FromRole="HOADON" ToRole="KHACHHANG" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="KhachHangID" />
+          </Key>
+          <Property Name="KhachHangID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoDT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__KhachHan__29572725" FromRole="KHACHHANG" ToRole="HOADON" />
+        </EntityType>
+        <EntityType Name="MATHANG">
+          <Key>
+            <PropertyRef Name="MaMH" />
+          </Key>
+          <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenMH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gia" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="DVT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CTHDs" Relationship="Self.FK__CTHD__MaMH__2D27B809" FromRole="MATHANG" ToRole="CTHD" />
+        </EntityType>
+        <Association Name="FK__CTHD__HoaDonID__2C3393D0">
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADON">
+              <PropertyRef Name="HoaDonID" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="HoaDonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHD__MaMH__2D27B809">
+          <End Role="MATHANG" Type="Self.MATHANG" Multiplicity="1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATHANG">
+              <PropertyRef Name="MaMH" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="MaMH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__KhachHan__29572725">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="KhachHangID" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="KhachHangID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DesignPatternDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CTHDs" EntityType="Self.CTHD" />
+          <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+          <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+          <EntitySet Name="MATHANGs" EntityType="Self.MATHANG" />
+          <AssociationSet Name="FK__CTHD__HoaDonID__2C3393D0" Association="Self.FK__CTHD__HoaDonID__2C3393D0">
+            <End Role="HOADON" EntitySet="HOADONs" />
+            <End Role="CTHD" EntitySet="CTHDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHD__MaMH__2D27B809" Association="Self.FK__CTHD__MaMH__2D27B809">
+            <End Role="MATHANG" EntitySet="MATHANGs" />
+            <End Role="CTHD" EntitySet="CTHDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__KhachHan__29572725" Association="Self.FK__HOADON__KhachHan__29572725">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DesignPatternDBModelStoreContainer" CdmEntityContainer="DesignPatternDBEntities">
+          <EntitySetMapping Name="CTHDs">
+            <EntityTypeMapping TypeName="DesignPatternDBModel.CTHD">
+              <MappingFragment StoreEntitySet="CTHD">
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="HoaDonID" ColumnName="HoaDonID" />
+                <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOADONs">
+            <EntityTypeMapping TypeName="DesignPatternDBModel.HOADON">
+              <MappingFragment StoreEntitySet="HOADON">
+                <ScalarProperty Name="HoaDonID" ColumnName="HoaDonID" />
+                <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
+                <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="DesignPatternDBModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
+                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+                <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATHANGs">
+            <EntityTypeMapping TypeName="DesignPatternDBModel.MATHANG">
+              <MappingFragment StoreEntitySet="MATHANG">
+                <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+                <ScalarProperty Name="TenMH" ColumnName="TenMH" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

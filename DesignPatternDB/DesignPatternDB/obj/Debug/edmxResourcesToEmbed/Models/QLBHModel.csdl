@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DesignPatternDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTHD">
+    <Key>
+      <PropertyRef Name="STT" />
+      <PropertyRef Name="HoaDonID" />
+    </Key>
+    <Property Name="STT" Type="Int32" Nullable="false" />
+    <Property Name="HoaDonID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="DonGia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HOADON" Relationship="Self.FK__CTHD__HoaDonID__2C3393D0" FromRole="CTHD" ToRole="HOADON" />
+    <NavigationProperty Name="MATHANG" Relationship="Self.FK__CTHD__MaMH__2D27B809" FromRole="CTHD" ToRole="MATHANG" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="HoaDonID" />
+    </Key>
+    <Property Name="HoaDonID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayBan" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="KhachHangID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CTHDs" Relationship="Self.FK__CTHD__HoaDonID__2C3393D0" FromRole="HOADON" ToRole="CTHD" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__HOADON__KhachHan__29572725" FromRole="HOADON" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="KhachHangID" />
+    </Key>
+    <Property Name="KhachHangID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__KhachHan__29572725" FromRole="KHACHHANG" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="MATHANG">
+    <Key>
+      <PropertyRef Name="MaMH" />
+    </Key>
+    <Property Name="MaMH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenMH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gia" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="DVT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CTHDs" Relationship="Self.FK__CTHD__MaMH__2D27B809" FromRole="MATHANG" ToRole="CTHD" />
+  </EntityType>
+  <Association Name="FK__CTHD__HoaDonID__2C3393D0">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="HoaDonID" />
+      </Principal>
+      <Dependent Role="CTHD">
+        <PropertyRef Name="HoaDonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHD__MaMH__2D27B809">
+    <End Role="MATHANG" Type="Self.MATHANG" Multiplicity="1" />
+    <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MATHANG">
+        <PropertyRef Name="MaMH" />
+      </Principal>
+      <Dependent Role="CTHD">
+        <PropertyRef Name="MaMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOADON__KhachHan__29572725">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="KhachHangID" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="KhachHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DesignPatternDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTHDs" EntityType="Self.CTHD" />
+    <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="MATHANGs" EntityType="Self.MATHANG" />
+    <AssociationSet Name="FK__CTHD__HoaDonID__2C3393D0" Association="Self.FK__CTHD__HoaDonID__2C3393D0">
+      <End Role="HOADON" EntitySet="HOADONs" />
+      <End Role="CTHD" EntitySet="CTHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTHD__MaMH__2D27B809" Association="Self.FK__CTHD__MaMH__2D27B809">
+      <End Role="MATHANG" EntitySet="MATHANGs" />
+      <End Role="CTHD" EntitySet="CTHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOADON__KhachHan__29572725" Association="Self.FK__HOADON__KhachHan__29572725">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
