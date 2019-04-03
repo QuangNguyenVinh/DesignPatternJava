@@ -105,6 +105,9 @@
 			// 
 			// panel2
 			// 
+			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel2.Controls.Add(this.btn);
 			this.panel2.Controls.Add(this.groupBox1);
 			this.panel2.Controls.Add(this.txtBoxDiaChi);
@@ -115,7 +118,6 @@
 			this.panel2.Controls.Add(this.txtBoxMaKH);
 			this.panel2.Controls.Add(this.label2);
 			this.panel2.Controls.Add(this.label1);
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel2.Location = new System.Drawing.Point(446, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(354, 450);
@@ -180,6 +182,7 @@
 			this.txtBoxMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtBoxMaKH.Enabled = false;
 			this.txtBoxMaKH.Location = new System.Drawing.Point(142, 84);
 			this.txtBoxMaKH.Name = "txtBoxMaKH";
 			this.txtBoxMaKH.ReadOnly = true;

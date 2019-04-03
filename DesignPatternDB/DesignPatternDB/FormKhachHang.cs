@@ -95,6 +95,7 @@ namespace DesignPatternDB
 			if(rbAdd.Checked == true)
 			{
 				txtBoxMaKH.ReadOnly = false;
+				txtBoxMaKH.Enabled = true;
 				btn.Text = "Thêm";
 			}
 
@@ -105,6 +106,7 @@ namespace DesignPatternDB
 			if(rbUpdate.Checked)
 			{
 				txtBoxMaKH.ReadOnly = true;
+				txtBoxMaKH.Enabled = false;
 				btn.Text = "Cập nhật";
 			}
 		}
@@ -114,6 +116,7 @@ namespace DesignPatternDB
 			if (rbDelete.Checked)
 			{
 				txtBoxMaKH.ReadOnly = true;
+				txtBoxMaKH.Enabled = false;
 				btn.Text = "Xóa";
 			}
 		}
